@@ -40,7 +40,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
-        arguments: :core:build sonarqube --info
+        arguments: :core:build :core:sonarqube --info
     - name: Archive test report
       uses: actions/upload-artifact@v3
       with:
