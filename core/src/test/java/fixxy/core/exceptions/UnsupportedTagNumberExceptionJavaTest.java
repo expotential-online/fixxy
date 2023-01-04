@@ -8,12 +8,12 @@ import static fixxy.core.exceptions.UnsupportedTagNumberExceptionKotlinTest.Mess
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName(JavaSuiteName)
-public class UnsupportedTagNumberExceptionJavaTest {
+class UnsupportedTagNumberExceptionJavaTest {
 
-    @Test
-    @DisplayName(MessageTestName)
-    public void testMessage() {
-        final Exception exception = new UnsupportedTagNumberException(23);
-        assertEquals("Tag [23] is unsupported", exception.getMessage());
-    }
+  @Test
+  @DisplayName(MessageTestName)
+  public void testMessage() {
+    final Exception exception = new UnsupportedTagNumberException(23);
+    assertEquals("Tag [23] is unsupported", exception.getMessage());
+  }
 }

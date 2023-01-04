@@ -16,23 +16,23 @@ import static fixxy.core.standard.StandardMessagePartKotlinTest.ConstructFromSet
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName(JavaSuiteName)
-public class StandardMessageJavaTest {
+class StandardMessageJavaTest {
 
-    @Test
-    @DisplayName(ConstructFromSetOfFieldsTestName)
-    public void testConstructFromSetOfFields() {
-        final Field field1 = simpleField(simpleFieldDefinition(1, "Account"), "account_1");
-        final Field field2 = simpleField(simpleFieldDefinition(54, "Side"), "2");
-        final MessagePart value = simpleMessage(Set.of(field1, field2));
-        assertEquals(Set.of(field1, field2), value.getFields());
-    }
+  @Test
+  @DisplayName(ConstructFromSetOfFieldsTestName)
+  public void testConstructFromSetOfFields() {
+    final Field field1 = simpleField(simpleFieldDefinition(1, "Account"), "account_1");
+    final Field field2 = simpleField(simpleFieldDefinition(54, "Side"), "2");
+    final MessagePart value = simpleMessage(Set.of(field1, field2));
+    assertEquals(Set.of(field1, field2), value.getFields());
+  }
 
-    @Test
-    @DisplayName(ConstructFromVarArgFieldsTestName)
-    public void testConstructFromVarArgFields() {
-        final Field field1 = simpleField(simpleFieldDefinition(1, "Account"), "account_1");
-        final Field field2 = simpleField(simpleFieldDefinition(54, "Side"), "2");
-        final MessagePart value = simpleMessage(field1, field2);
-        assertEquals(Set.of(field1, field2), value.getFields());
-    }
+  @Test
+  @DisplayName(ConstructFromVarArgFieldsTestName)
+  public void testConstructFromVarArgFields() {
+    final Field field1 = simpleField(simpleFieldDefinition(1, "Account"), "account_1");
+    final Field field2 = simpleField(simpleFieldDefinition(54, "Side"), "2");
+    final MessagePart value = simpleMessage(field1, field2);
+    assertEquals(Set.of(field1, field2), value.getFields());
+  }
 }

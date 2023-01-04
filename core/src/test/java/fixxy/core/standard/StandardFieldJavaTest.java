@@ -14,51 +14,52 @@ import static fixxy.core.standard.StandardFieldKotlinTest.*;
 import static fixxy.core.standard.StandardMessagePart.simpleMessagePart;
 import static org.junit.jupiter.api.Assertions.*;
 
+
 @DisplayName(JavaSuiteName)
-public class StandardFieldJavaTest {
+class StandardFieldJavaTest {
 
-    @Test
-    @DisplayName(ConstructSimpleFieldTestName)
-    public void testConstructSimpleField() {
-        final Field value = simpleField(simpleFieldDefinition(54, "Side"), "2");
-        assertEquals(54, value.getDefinition().getTagNumber());
-        assertEquals("Side", value.getDefinition().getDescription());
-        assertEquals("2", value.getFixFieldValue());
-        assertFalse(value.isGroup());
-        assertTrue(value.getParts().isEmpty());
-    }
+  @Test
+  @DisplayName(ConstructSimpleFieldTestName)
+  public void testConstructSimpleField() {
+    final Field value = simpleField(simpleFieldDefinition(54, "Side"), "2");
+    assertEquals(54, value.getDefinition().getTagNumber());
+    assertEquals("Side", value.getDefinition().getDescription());
+    assertEquals("2", value.getFixFieldValue());
+    assertFalse(value.isGroup());
+    assertTrue(value.getParts().isEmpty());
+  }
 
-    @Test
-    @DisplayName(ConstructGroupCountFieldFromSetOfPartsTestName)
-    public void testConstructGroupCountFieldFromSetOfParts() {
-        final MessagePart part1 = simpleMessagePart(
-                simpleField(simpleFieldDefinition(1, "Account"), "account_1"),
-                simpleField(simpleFieldDefinition(54, "Side"), "2"));
-        final MessagePart part2 = simpleMessagePart(
-                simpleField(simpleFieldDefinition(1, "Account"), "account_2"),
-                simpleField(simpleFieldDefinition(54, "Side"), "1"));
-        final Field value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", Set.of(part1, part2));
-        assertEquals(2, value.getDefinition().getTagNumber());
-        assertEquals("NoEntries", value.getDefinition().getDescription());
-        assertEquals("2", value.getFixFieldValue());
-        assertTrue(value.isGroup());
-        assertEquals(Set.of(part1, part2), value.getParts());
-    }
+  @Test
+  @DisplayName(ConstructGroupCountFieldFromSetOfPartsTestName)
+  public void testConstructGroupCountFieldFromSetOfParts() {
+    final MessagePart part1 = simpleMessagePart(
+        simpleField(simpleFieldDefinition(1, "Account"), "account_1"),
+        simpleField(simpleFieldDefinition(54, "Side"), "2"));
+    final MessagePart part2 = simpleMessagePart(
+        simpleField(simpleFieldDefinition(1, "Account"), "account_2"),
+        simpleField(simpleFieldDefinition(54, "Side"), "1"));
+    final Field value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", Set.of(part1, part2));
+    assertEquals(2, value.getDefinition().getTagNumber());
+    assertEquals("NoEntries", value.getDefinition().getDescription());
+    assertEquals("2", value.getFixFieldValue());
+    assertTrue(value.isGroup());
+    assertEquals(Set.of(part1, part2), value.getParts());
+  }
 
-    @Test
-    @DisplayName(ConstructGroupCountFieldFromVarArgPartsTestName)
-    public void testConstructGroupCountFieldFromVarArgParts() {
-        final MessagePart part1 = simpleMessagePart(
-                simpleField(simpleFieldDefinition(1, "Account"), "account_1"),
-                simpleField(simpleFieldDefinition(54, "Side"), "2"));
-        final MessagePart part2 = simpleMessagePart(
-                simpleField(simpleFieldDefinition(1, "Account"), "account_2"),
-                simpleField(simpleFieldDefinition(54, "Side"), "1"));
-        final Field value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", part1, part2);
-        assertEquals(2, value.getDefinition().getTagNumber());
-        assertEquals("NoEntries", value.getDefinition().getDescription());
-        assertEquals("2", value.getFixFieldValue());
-        assertTrue(value.isGroup());
-        assertEquals(Set.of(part1, part2), value.getParts());
-    }
+  @Test
+  @DisplayName(ConstructGroupCountFieldFromVarArgPartsTestName)
+  public void testConstructGroupCountFieldFromVarArgParts() {
+    final MessagePart part1 = simpleMessagePart(
+        simpleField(simpleFieldDefinition(1, "Account"), "account_1"),
+        simpleField(simpleFieldDefinition(54, "Side"), "2"));
+    final MessagePart part2 = simpleMessagePart(
+        simpleField(simpleFieldDefinition(1, "Account"), "account_2"),
+        simpleField(simpleFieldDefinition(54, "Side"), "1"));
+    final Field value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", part1, part2);
+    assertEquals(2, value.getDefinition().getTagNumber());
+    assertEquals("NoEntries", value.getDefinition().getDescription());
+    assertEquals("2", value.getFixFieldValue());
+    assertTrue(value.isGroup());
+    assertEquals(Set.of(part1, part2), value.getParts());
+  }
 }

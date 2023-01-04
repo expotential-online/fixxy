@@ -10,13 +10,13 @@ import static fixxy.core.standard.StandardEnumerableFieldValueKotlinTest.JavaSui
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName(JavaSuiteName)
-public class StandardEnumerableFieldValueJavaTest {
+class StandardEnumerableFieldValueJavaTest {
 
-    @Test
-    @DisplayName(ConstructWithDescriptionAndFixFieldValueTestName)
-    public void testConstructWithDescriptionAndFixFieldValue() {
-        final EnumerableFieldValue value = simpleEnumerableFieldValue("some_description", "Z");
-        assertEquals("some_description", value.getDescription());
-        assertEquals("Z", value.getFixFieldValue());
-    }
+  @Test
+  @DisplayName(ConstructWithDescriptionAndFixFieldValueTestName)
+  public void testConstructWithDescriptionAndFixFieldValue() {
+    final EnumerableFieldValue value = simpleEnumerableFieldValue("some_description", "Z");
+    assertEquals("some_description", value.getDescription());
+    assertEquals("Z", value.getFixFieldValue());
+  }
 }
