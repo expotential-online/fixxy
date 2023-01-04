@@ -49,8 +49,8 @@ internal class StandardFieldDefinitionKotlinTest {
   @Test
   @DisplayName(ConstructFromTagNumberAndDescriptionAndEnumerableValuesTestName)
   fun testConstructFromTagNumberAndDescriptionAndEnumerableValues() {
-    val fieldValue1 = simpleEnumerableFieldValue("account_1", "X")
-    val fieldValue2 = simpleEnumerableFieldValue("account_2", "Y")
+    val fieldValue1 = simpleEnumerableFieldValue("account_3", "Z")
+    val fieldValue2 = simpleEnumerableFieldValue("account_4", "A")
     val value = enumeratedFieldDefinition(1, "Account", setOf(fieldValue1, fieldValue2))
     assertEquals(1, value.tagNumber)
     assertEquals("Account", value.description)

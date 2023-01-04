@@ -50,12 +50,12 @@ internal class StandardFieldKotlinTest {
   @DisplayName(ConstructGroupCountFieldFromVarArgPartsTestName)
   fun testConstructGroupCountFieldFromVarArgParts() {
     val part1 = simpleMessagePart(
-      simpleField(simpleFieldDefinition(1, "Account"), "account_1"),
-      simpleField(simpleFieldDefinition(54, "Side"), "2")
+      simpleField(simpleFieldDefinition(1, "Account"), "account_3"),
+      simpleField(simpleFieldDefinition(54, "Side"), "4")
     )
     val part2 = simpleMessagePart(
-      simpleField(simpleFieldDefinition(1, "Account"), "account_2"),
-      simpleField(simpleFieldDefinition(54, "Side"), "1")
+      simpleField(simpleFieldDefinition(1, "Account"), "account_4"),
+      simpleField(simpleFieldDefinition(54, "Side"), "3")
     )
     val value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", part1, part2)
     assertEquals(2, value.definition.tagNumber)

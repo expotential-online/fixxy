@@ -53,11 +53,11 @@ class StandardFieldJavaTest {
   @DisplayName(ConstructGroupCountFieldFromVarArgPartsTestName)
   public void testConstructGroupCountFieldFromVarArgParts() {
     final MessagePart part1 = simpleMessagePart(
-        simpleField(simpleFieldDefinition(1, "Account"), "account_1"),
-        simpleField(simpleFieldDefinition(54, "Side"), "2"));
+        simpleField(simpleFieldDefinition(1, "Account"), "account_3"),
+        simpleField(simpleFieldDefinition(54, "Side"), "4"));
     final MessagePart part2 = simpleMessagePart(
-        simpleField(simpleFieldDefinition(1, "Account"), "account_2"),
-        simpleField(simpleFieldDefinition(54, "Side"), "1"));
+        simpleField(simpleFieldDefinition(1, "Account"), "account_4"),
+        simpleField(simpleFieldDefinition(54, "Side"), "3"));
     final Field value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", part1, part2);
     assertEquals(2, value.getDefinition().getTagNumber());
     assertEquals("NoEntries", value.getDefinition().getDescription());
