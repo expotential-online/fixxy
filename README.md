@@ -1,11 +1,13 @@
-# fixxy
+# Fixxy
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/expotential-online/fixxy/gradle.yml) ![GitHub last commit](https://img.shields.io/github/last-commit/expotential-online/fixxy) ![GitHub pull requests](https://img.shields.io/github/issues-pr/expotential-online/fixxy) ![GitHub repo size](https://img.shields.io/github/repo-size/expotential-online/fixxy) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/006eaf62215d448984dd6aa660630547)](https://www.codacy.com/gh/expotential-online/fixxy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=expotential-online/fixxy&amp;utm_campaign=Badge_Grade)
+## Project-Level Badges
 
-## Projects
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/expotential-online/fixxy/build.yml) ![GitHub last commit](https://img.shields.io/github/last-commit/expotential-online/fixxy) ![GitHub pull requests](https://img.shields.io/github/issues-pr/expotential-online/fixxy) ![GitHub repo size](https://img.shields.io/github/repo-size/expotential-online/fixxy) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/006eaf62215d448984dd6aa660630547)](https://www.codacy.com/gh/expotential-online/fixxy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=expotential-online/fixxy&amp;utm_campaign=Badge_Grade)
+
+## Sub-Project-Level Badges
 
 | Aspect | Core | QuickFix |
-| - | - | - |
+| --- | ---: | ---: |
 | Maintainability | [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.core&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.core) | [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.quickfix&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.quickfix) |
 | Reliability | [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.core&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.core) | [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.quickfix&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.quickfix) |
 | Security | [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.core&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.core) | [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.quickfix&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.quickfix) |
