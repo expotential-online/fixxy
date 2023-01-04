@@ -14,7 +14,7 @@ class StandardEnumerableFieldValueJavaTest {
 
   @Test
   @DisplayName(ConstructWithDescriptionAndFixFieldValueTestName)
-  public void testConstructWithDescriptionAndFixFieldValue() {
+  void testConstructWithDescriptionAndFixFieldValue() {
     final EnumerableFieldValue value = simpleEnumerableFieldValue("some_description", "Z");
     assertEquals("some_description", value.getDescription());
     assertEquals("Z", value.getFixFieldValue());

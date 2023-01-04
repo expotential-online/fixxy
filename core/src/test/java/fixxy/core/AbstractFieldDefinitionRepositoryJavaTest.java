@@ -18,7 +18,7 @@ class AbstractFieldDefinitionRepositoryJavaTest {
 
   @Test
   @DisplayName(NullOrThrowingTestName)
-  public void testNullOrThrowing() {
+  void testNullOrThrowing() {
     final TestFieldDefinitionRepository repo = new TestFieldDefinitionRepository(true);
     assertThrows(UnsupportedTagNumberException.class, () -> repo.fieldDefinitionOrThrowForTagNumber(54));
     assertNull(repo.fieldDefinitionOrNullForTagNumber(54));
@@ -26,13 +26,13 @@ class AbstractFieldDefinitionRepositoryJavaTest {
 
   @Test
   @DisplayName(NotNullAndNotThrowingTestName)
-  public void testNotNullAndNotThrowing() {
+  void testNotNullAndNotThrowing() {
     final TestFieldDefinitionRepository repo = new TestFieldDefinitionRepository(false);
     assertEquals(54, repo.fieldDefinitionOrThrowForTagNumber(54).getTagNumber());
     assertEquals(54, repo.fieldDefinitionOrNullForTagNumber(54).getTagNumber());
   }
 
-  private static class TestFieldDefinitionRepository extends AbstractFieldDefinitionRepository {
+  private static final class TestFieldDefinitionRepository extends AbstractFieldDefinitionRepository {
 
     private final boolean throwing;
 

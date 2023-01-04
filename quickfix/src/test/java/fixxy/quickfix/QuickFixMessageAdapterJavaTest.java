@@ -22,7 +22,7 @@ class QuickFixMessageAdapterJavaTest {
 
   @Test
   @DisplayName(StructureWithRepeatingGroupsTestName)
-  public void testStructureWithRepeatingGroups() {
+  void testStructureWithRepeatingGroups() {
 
     final quickfix.Message quickFixMessage = quickFixMessage(
         Fix42,

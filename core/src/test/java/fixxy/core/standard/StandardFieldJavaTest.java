@@ -23,7 +23,7 @@ class StandardFieldJavaTest {
 
   @Test
   @DisplayName(ConstructSimpleFieldTestName)
-  public void testConstructSimpleField() {
+  void testConstructSimpleField() {
     final Field value = simpleField(simpleFieldDefinition(54, "Side"), "2");
     assertEquals(54, value.getDefinition().getTagNumber());
     assertEquals("Side", value.getDefinition().getDescription());
@@ -34,7 +34,7 @@ class StandardFieldJavaTest {
 
   @Test
   @DisplayName(ConstructGroupCountFieldFromSetOfPartsTestName)
-  public void testConstructGroupCountFieldFromSetOfParts() {
+  void testConstructGroupCountFieldFromSetOfParts() {
     final MessagePart part1 = simpleMessagePart(
         simpleField(simpleFieldDefinition(1, "Account"), "account_1"),
         simpleField(simpleFieldDefinition(54, "Side"), "2"));
@@ -51,7 +51,7 @@ class StandardFieldJavaTest {
 
   @Test
   @DisplayName(ConstructGroupCountFieldFromVarArgPartsTestName)
-  public void testConstructGroupCountFieldFromVarArgParts() {
+  void testConstructGroupCountFieldFromVarArgParts() {
     final MessagePart part1 = simpleMessagePart(
         simpleField(simpleFieldDefinition(1, "Account"), "account_3"),
         simpleField(simpleFieldDefinition(54, "Side"), "4"));
