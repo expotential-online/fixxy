@@ -25,8 +25,8 @@ class StandardFieldJavaTest {
   @DisplayName(ConstructSimpleFieldTestName)
   void testConstructSimpleField() {
     final Field value = simpleField(simpleFieldDefinition(54, "Side"), "2");
-    assertEquals(54, value.getDefinition().getTagNumber());
-    assertEquals("Side", value.getDefinition().getDescription());
+    assertEquals(54, value.definition().getTagNumber());
+    assertEquals("Side", value.definition().getDescription());
     assertEquals("2", value.getFixFieldValue());
     assertFalse(value.isGroup());
     assertTrue(value.getParts().isEmpty());
@@ -42,8 +42,8 @@ class StandardFieldJavaTest {
         simpleField(simpleFieldDefinition(1, "Account"), "account_2"),
         simpleField(simpleFieldDefinition(54, "Side"), "1"));
     final Field value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", Set.of(part1, part2));
-    assertEquals(2, value.getDefinition().getTagNumber());
-    assertEquals("NoEntries", value.getDefinition().getDescription());
+    assertEquals(2, value.definition().getTagNumber());
+    assertEquals("NoEntries", value.definition().getDescription());
     assertEquals("2", value.getFixFieldValue());
     assertTrue(value.isGroup());
     assertEquals(Set.of(part1, part2), value.getParts());
@@ -59,8 +59,8 @@ class StandardFieldJavaTest {
         simpleField(simpleFieldDefinition(1, "Account"), "account_4"),
         simpleField(simpleFieldDefinition(54, "Side"), "3"));
     final Field value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", part1, part2);
-    assertEquals(2, value.getDefinition().getTagNumber());
-    assertEquals("NoEntries", value.getDefinition().getDescription());
+    assertEquals(2, value.definition().getTagNumber());
+    assertEquals("NoEntries", value.definition().getDescription());
     assertEquals("2", value.getFixFieldValue());
     assertTrue(value.isGroup());
     assertEquals(Set.of(part1, part2), value.getParts());

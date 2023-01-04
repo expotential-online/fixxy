@@ -8,11 +8,12 @@ import fixxy.core.MessagePart
 
 @Suppress("DataClassPrivateConstructor")
 data class StandardField private constructor(
-  override val definition: FieldDefinition,
-  override val fixFieldValue: FixFieldValue,
-  override val parts: Set<MessagePart>
+    private val definition: FieldDefinition,
+    override val fixFieldValue: FixFieldValue,
+    override val parts: Set<MessagePart>
 ) : Field {
-  override fun isGroup(): IsGroup = parts.isNotEmpty()
+    override fun definition(): FieldDefinition = definition
+    override fun isGroup(): IsGroup = parts.isNotEmpty()
 
   companion object {
 
