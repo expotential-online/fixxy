@@ -1,21 +1,25 @@
 package fixxy.core.standard;
 
-import fixxy.core.Field;
-import fixxy.core.MessagePart;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.util.Set;
-
 import static fixxy.core.standard.StandardField.groupCountField;
 import static fixxy.core.standard.StandardField.simpleField;
 import static fixxy.core.standard.StandardFieldDefinition.simpleFieldDefinition;
-import static fixxy.core.standard.StandardFieldKotlinTest.*;
+import static fixxy.core.standard.StandardFieldKotlinTest.ConstructGroupCountFieldFromSetOfPartsTestName;
+import static fixxy.core.standard.StandardFieldKotlinTest.ConstructGroupCountFieldFromVarArgPartsTestName;
+import static fixxy.core.standard.StandardFieldKotlinTest.ConstructSimpleFieldTestName;
+import static fixxy.core.standard.StandardFieldKotlinTest.JavaSuiteName;
 import static fixxy.core.standard.StandardMessagePart.simpleMessagePart;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import fixxy.core.Field;
+import fixxy.core.MessagePart;
+import java.util.Set;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 @DisplayName(JavaSuiteName)
-public class StandardFieldJavaTest {
+class StandardFieldJavaTest {
 
     @Test
     @DisplayName(ConstructSimpleFieldTestName)

@@ -7,7 +7,9 @@ import fixxy.core.standard.StandardField.Companion.simpleField
 import fixxy.core.standard.StandardFieldDefinition.Companion.simpleFieldDefinition
 import fixxy.core.standard.StandardFieldKotlinTest.Companion.KotlinSuiteName
 import fixxy.core.standard.StandardMessagePart.Companion.simpleMessagePart
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
@@ -63,15 +65,15 @@ internal class StandardFieldKotlinTest {
         assertEquals(setOf(part1, part2), value.parts)
     }
 
-    companion object {
-        private const val SuiteName = "A standard field"
-        const val KotlinSuiteName = "$Kotlin $SuiteName"
-        const val JavaSuiteName = "$Java $SuiteName"
+  companion object {
+    private const val SuiteName = "A standard field"
+    const val KotlinSuiteName = "$Kotlin $SuiteName"
+    const val JavaSuiteName = "$Java $SuiteName"
 
-        const val ConstructSimpleFieldTestName = "can be correctly constructed for a simple field"
-        const val ConstructGroupCountFieldFromSetOfPartsTestName =
-            "can be correctly constructed from a set of parts for a group count field"
-        const val ConstructGroupCountFieldFromVarArgPartsTestName =
-            "can be correctly constructed from vararg parts for a group count field"
-    }
+    const val ConstructSimpleFieldTestName = "can be correctly constructed for a simple field"
+    const val ConstructGroupCountFieldFromSetOfPartsTestName =
+      "can be correctly constructed from a set of parts for a group count field"
+    const val ConstructGroupCountFieldFromVarArgPartsTestName =
+      "can be correctly constructed from vararg parts for a group count field"
+  }
 }

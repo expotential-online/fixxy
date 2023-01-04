@@ -4,8 +4,8 @@ import fixxy.core.exceptions.UnsupportedTagNumberException
 
 interface FieldDefinitionRepository {
 
-    fun fieldDefinitionOrNullForTagNumber(tagNumber: TagNumber): FieldDefinition?
+  fun fieldDefinitionOrNullForTagNumber(tagNumber: TagNumber): FieldDefinition?
 
-    @Throws(UnsupportedTagNumberException::class)
-    fun fieldDefinitionOrThrowForTagNumber(tagNumber: TagNumber): FieldDefinition
+  @Throws(UnsupportedTagNumberException::class)
+  fun fieldDefinitionOrThrowForTagNumber(tagNumber: TagNumber): FieldDefinition
 }

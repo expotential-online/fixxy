@@ -1,5 +1,5 @@
 package fixxy.core
 
 interface HasSynopsis {
-    val synopsis: Synopsis
+  val synopsis: Synopsis
 }

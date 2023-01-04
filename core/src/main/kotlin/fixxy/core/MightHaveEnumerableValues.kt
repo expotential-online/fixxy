@@ -1,5 +1,5 @@
 package fixxy.core
 
 interface MightHaveEnumerableValues {
-    val enumerableValues: Set<EnumerableFieldValue>
+  val enumerableValues: Set<EnumerableFieldValue>
 }
