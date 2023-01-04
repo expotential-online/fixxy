@@ -56,8 +56,8 @@ class StandardFieldDefinitionJavaTest {
   @Test
   @DisplayName(ConstructFromTagNumberAndDescriptionAndEnumerableValuesTestName)
   public void testConstructFromTagNumberAndDescriptionAndEnumerableValues() {
-    final EnumerableFieldValue fieldValue1 = simpleEnumerableFieldValue("account_1", "X");
-    final EnumerableFieldValue fieldValue2 = simpleEnumerableFieldValue("account_2", "Y");
+    final EnumerableFieldValue fieldValue1 = simpleEnumerableFieldValue("account_3", "Z");
+    final EnumerableFieldValue fieldValue2 = simpleEnumerableFieldValue("account_4", "A");
     final FieldDefinition value = enumeratedFieldDefinition(1, "Account", Set.of(fieldValue1, fieldValue2));
     assertEquals(1, value.getTagNumber());
     assertEquals("Account", value.getDescription());
