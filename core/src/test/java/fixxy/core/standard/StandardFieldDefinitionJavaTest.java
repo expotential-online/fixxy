@@ -1,18 +1,21 @@
 package fixxy.core.standard;
 
-import fixxy.core.EnumerableFieldValue;
-import fixxy.core.FieldDefinition;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.util.Set;
-
 import static fixxy.core.standard.StandardEnumerableFieldValue.simpleEnumerableFieldValue;
 import static fixxy.core.standard.StandardFieldDefinition.enumeratedFieldDefinition;
 import static fixxy.core.standard.StandardFieldDefinition.simpleFieldDefinition;
-import static fixxy.core.standard.StandardFieldDefinitionKotlinTest.*;
+import static fixxy.core.standard.StandardFieldDefinitionKotlinTest.ConstructFromTagNumberAndDescriptionAndEnumerableValuesTestName;
+import static fixxy.core.standard.StandardFieldDefinitionKotlinTest.ConstructFromTagNumberAndDescriptionAndSynopsisAndEnumerableValuesTestName;
+import static fixxy.core.standard.StandardFieldDefinitionKotlinTest.ConstructFromTagNumberAndDescriptionAndSynopsisTestName;
+import static fixxy.core.standard.StandardFieldDefinitionKotlinTest.ConstructFromTagNumberAndDescriptionTestName;
+import static fixxy.core.standard.StandardFieldDefinitionKotlinTest.JavaSuiteName;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import fixxy.core.EnumerableFieldValue;
+import fixxy.core.FieldDefinition;
+import java.util.Set;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 @DisplayName(JavaSuiteName)
 class StandardFieldDefinitionJavaTest {

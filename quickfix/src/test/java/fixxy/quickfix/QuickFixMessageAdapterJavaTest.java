@@ -1,9 +1,5 @@
 package fixxy.quickfix;
 
-import fixxy.core.Message;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
 import static fixxy.core.standard.StandardField.groupCountField;
 import static fixxy.core.standard.StandardField.simpleField;
 import static fixxy.core.standard.StandardFieldDefinition.enumeratedFieldDefinition;
@@ -16,6 +12,10 @@ import static fixxy.quickfix.QuickFixMessageAdapterKotlinTest.StructureWithRepea
 import static fixxy.quickfix.QuickFixVersion.Fix_4_2;
 import static fixxy.quickfix.Tests.quickFixMessage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import fixxy.core.Message;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 @DisplayName(JavaSuiteName)
 class QuickFixMessageAdapterJavaTest {
