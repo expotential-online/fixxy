@@ -1,8 +1,8 @@
-package fixxy.diff.comparer
+package fixxy.comparison.comparer
 
 import fixxy.core.Field
-import fixxy.diff.FieldComparisonResult
+import fixxy.comparison.FieldComparisonResult
 
 interface FieldComparer {
-    fun compare(leftField: Field, rightField: Field): FieldComparisonResult
+  fun compare(leftField: Field, rightField: Field): FieldComparisonResult
 }

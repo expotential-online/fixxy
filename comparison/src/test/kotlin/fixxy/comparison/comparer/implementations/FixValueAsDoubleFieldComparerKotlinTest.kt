@@ -1,12 +1,12 @@
-package fixxy.diff.comparer.implementations
+package fixxy.comparison.comparer.implementations
 
 import fixxy.core.standard.StandardField.Companion.simpleField
 import fixxy.core.standard.StandardFieldDefinition.Companion.simpleFieldDefinition
-import fixxy.diff.ComparisonResultAcceptability.Acceptable
-import fixxy.diff.ComparisonResultAcceptability.Unacceptable
-import fixxy.diff.Tests.Java
-import fixxy.diff.Tests.Kotlin
-import fixxy.diff.comparer.implementations.FixValueAsDoubleFieldComparerKotlinTest.Companion.KotlinSuiteName
+import fixxy.comparison.ComparisonResultAcceptability.Acceptable
+import fixxy.comparison.ComparisonResultAcceptability.Unacceptable
+import fixxy.comparison.Tests.Java
+import fixxy.comparison.Tests.Kotlin
+import fixxy.comparison.comparer.implementations.FixValueAsDoubleFieldComparerKotlinTest.Companion.KotlinSuiteName
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test

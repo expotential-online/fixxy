@@ -1,5 +1,5 @@
-package fixxy.diff
+package fixxy.comparison
 
 interface FieldComparisonResult :
-        HasComparisonResultAcceptability,
-        HasComparisonResultMessage
+  HasComparisonResultAcceptability,
+  HasComparisonResultMessage

@@ -1,10 +1,10 @@
-package fixxy.diff
+package fixxy.comparison
 
-import fixxy.diff.ComparisonResultAcceptability.Acceptable
-import fixxy.diff.ComparisonResultAcceptability.Unacceptable
+import fixxy.comparison.ComparisonResultAcceptability.Acceptable
+import fixxy.comparison.ComparisonResultAcceptability.Unacceptable
 
 enum class ComparisonResultCategory(val acceptability: ComparisonResultAcceptability) {
-    ExactlyTheSame(Acceptable),
-    DifferentButAccepted(Acceptable),
-    Different(Unacceptable)
+  ExactlyTheSame(Acceptable),
+  DifferentButAccepted(Acceptable),
+  Different(Unacceptable)
 }

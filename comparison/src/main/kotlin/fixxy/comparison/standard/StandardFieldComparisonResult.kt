@@ -1,27 +1,27 @@
-package fixxy.diff.standard
+package fixxy.comparison.standard
 
-import fixxy.diff.ComparisonResultAcceptability
-import fixxy.diff.ComparisonResultAcceptability.Acceptable
-import fixxy.diff.ComparisonResultAcceptability.Unacceptable
-import fixxy.diff.ComparisonResultMessage
-import fixxy.diff.FieldComparisonResult
+import fixxy.comparison.ComparisonResultAcceptability
+import fixxy.comparison.ComparisonResultAcceptability.Acceptable
+import fixxy.comparison.ComparisonResultAcceptability.Unacceptable
+import fixxy.comparison.ComparisonResultMessage
+import fixxy.comparison.FieldComparisonResult
 
 @Suppress("DataClassPrivateConstructor")
 data class StandardFieldComparisonResult private constructor(
-    private val acceptability: ComparisonResultAcceptability,
-    private val message: ComparisonResultMessage
+  private val acceptability: ComparisonResultAcceptability,
+  private val message: ComparisonResultMessage
 ) : FieldComparisonResult {
 
-    override fun acceptability(): ComparisonResultAcceptability = acceptability
-    override fun message(): ComparisonResultMessage = message
+  override fun acceptability(): ComparisonResultAcceptability = acceptability
+  override fun message(): ComparisonResultMessage = message
 
-    companion object {
+  companion object {
 
-        @JvmStatic
-        fun accepting(): FieldComparisonResult = StandardFieldComparisonResult(Acceptable, "OK")
+    @JvmStatic
+    fun accepting(): FieldComparisonResult = StandardFieldComparisonResult(Acceptable, "OK")
 
-        @JvmStatic
-        fun rejectingWithMessage(message: ComparisonResultMessage): FieldComparisonResult =
-            StandardFieldComparisonResult(Unacceptable, message)
-    }
+    @JvmStatic
+    fun rejectingWithMessage(message: ComparisonResultMessage): FieldComparisonResult =
+      StandardFieldComparisonResult(Unacceptable, message)
+  }
 }

@@ -1,5 +1,5 @@
-package fixxy.diff
+package fixxy.comparison
 
 interface HasComparisonResultMessage {
-    fun message(): ComparisonResultMessage
+  fun message(): ComparisonResultMessage
 }

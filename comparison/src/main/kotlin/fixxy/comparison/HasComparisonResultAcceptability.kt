@@ -1,5 +1,5 @@
-package fixxy.diff
+package fixxy.comparison
 
 interface HasComparisonResultAcceptability {
-    fun acceptability(): ComparisonResultAcceptability
+  fun acceptability(): ComparisonResultAcceptability
 }

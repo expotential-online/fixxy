@@ -1,6 +1,6 @@
-package fixxy.diff
+package fixxy.comparison
 
 enum class ComparisonResultAcceptability {
-    Acceptable,
-    Unacceptable
+  Acceptable,
+  Unacceptable
 }
