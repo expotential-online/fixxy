@@ -6,6 +6,13 @@
 
 ## Sub-Project-Level Badges
 
+| Sub-Project | Coverage |
+| --- | --- |
+| Core | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.core&metric=coverage)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.core) |
+| Comparison | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.comparison&metric=coverage)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.comparison) |
+| QuickFix | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.quickfix&metric=coverage)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.quickfix) |
+
+
 | Aspect | Core | QuickFix |
 | --- | ---: | ---: |
 | Maintainability | [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.core&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.core) | [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=expotential-online%3Afixxy.quickfix&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=expotential-online%3Afixxy.quickfix) |
