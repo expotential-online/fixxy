@@ -26,7 +26,8 @@ class QuickFixMessageAdapterJavaTest {
 
     final quickfix.Message quickFixMessage = quickFixMessage(
         Fix42,
-        "8=FIX.4.2|9=185|35=W|34=328|49=***|52=20190322-15:31:36.850|56=***|55=EUR/USD|262=2-1553282994.168723|268=2|269=0|270=1.127870|271=1000000|269=1|270=1.127900|271=1000000|10=082|");
+        "8=FIX.4.2|9=185|35=W|34=328|49=***|52=20190322-15:31:36.850|56=***|55=EUR/USD|262=2-1553282994.168723|268=2|"
+            + "269=0|270=1.127870|271=1000000|269=1|270=1.127900|271=1000000|10=082|");
 
     final QuickFixMessageAdapter adapter = new QuickFixMessageAdapter();
     final QuickFixContext context = new QuickFixContext(Fix42);
