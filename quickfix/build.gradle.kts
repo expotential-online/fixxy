@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.7.21"
+    id("org.sonarqube") version "3.5.0.2730"
 }
 
 repositories {
@@ -17,4 +18,12 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+sonarqube {
+    properties {
+        property("sonar.projectKey", "expotential-online_fixxy")
+        property("sonar.organization", "expotential-online")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
