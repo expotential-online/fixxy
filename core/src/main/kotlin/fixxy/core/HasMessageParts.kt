@@ -1,5 +1,5 @@
 package fixxy.core
 
 interface HasMessageParts {
-    val parts: Set<MessagePart>
+  val parts: Set<MessagePart>
 }

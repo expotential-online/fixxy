@@ -1,5 +1,5 @@
 package fixxy.core
 
 interface MessagePart {
-    val fields: Set<Field>
+  val fields: Set<Field>
 }

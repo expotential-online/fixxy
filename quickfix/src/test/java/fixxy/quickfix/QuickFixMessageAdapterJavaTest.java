@@ -9,7 +9,7 @@ import static fixxy.core.standard.StandardMessagePart.simpleMessagePart;
 import static fixxy.quickfix.QuickFixEnumeratedFieldValueHelper.enumeratedFieldValuesForFieldName;
 import static fixxy.quickfix.QuickFixMessageAdapterKotlinTest.JavaSuiteName;
 import static fixxy.quickfix.QuickFixMessageAdapterKotlinTest.StructureWithRepeatingGroupsTestName;
-import static fixxy.quickfix.QuickFixVersion.Fix_4_2;
+import static fixxy.quickfix.QuickFixVersion.Fix42;
 import static fixxy.quickfix.Tests.quickFixMessage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -25,11 +25,11 @@ class QuickFixMessageAdapterJavaTest {
   public void testStructureWithRepeatingGroups() {
 
     final quickfix.Message quickFixMessage = quickFixMessage(
-        Fix_4_2,
+        Fix42,
         "8=FIX.4.2|9=185|35=W|34=328|49=***|52=20190322-15:31:36.850|56=***|55=EUR/USD|262=2-1553282994.168723|268=2|269=0|270=1.127870|271=1000000|269=1|270=1.127900|271=1000000|10=082|");
 
     final QuickFixMessageAdapter adapter = new QuickFixMessageAdapter();
-    final QuickFixContext context = new QuickFixContext(Fix_4_2);
+    final QuickFixContext context = new QuickFixContext(Fix42);
 
     final Message actualFixxyMessage = adapter.adaptOrThrow(quickFixMessage, context);
 

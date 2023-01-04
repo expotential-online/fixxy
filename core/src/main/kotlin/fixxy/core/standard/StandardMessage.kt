@@ -6,12 +6,12 @@ import fixxy.core.Message
 @Suppress("DataClassPrivateConstructor")
 data class StandardMessage private constructor(override val fields: Set<Field>) : Message {
 
-    companion object {
+  companion object {
 
-        @JvmStatic
-        fun simpleMessage(fields: Set<Field>): Message = StandardMessage(fields)
+    @JvmStatic
+    fun simpleMessage(fields: Set<Field>): Message = StandardMessage(fields)
 
-        @JvmStatic
-        fun simpleMessage(vararg fields: Field): Message = StandardMessage(fields.toSet())
-    }
+    @JvmStatic
+    fun simpleMessage(vararg fields: Field): Message = StandardMessage(fields.toSet())
+  }
 }

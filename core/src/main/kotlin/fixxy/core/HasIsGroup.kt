@@ -1,5 +1,5 @@
 package fixxy.core
 
 interface HasIsGroup {
-    fun isGroup(): IsGroup
+  fun isGroup(): IsGroup
 }
