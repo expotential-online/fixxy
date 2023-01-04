@@ -1,5 +1,5 @@
 package fixxy.core
 
 interface HasFieldDefinition {
-    val definition: FieldDefinition
+  val definition: FieldDefinition
 }

@@ -1,5 +1,5 @@
 package fixxy.core
 
 interface HasFixFieldValue {
-    val fixFieldValue: FixFieldValue
+  val fixFieldValue: FixFieldValue
 }

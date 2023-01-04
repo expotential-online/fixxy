@@ -1,5 +1,5 @@
 package fixxy.core
 
 interface HasTagNumber {
-    val tagNumber: TagNumber
+  val tagNumber: TagNumber
 }

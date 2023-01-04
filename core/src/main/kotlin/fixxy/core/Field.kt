@@ -1,7 +1,7 @@
 package fixxy.core
 
 interface Field :
-        HasFieldDefinition,
-        HasFixFieldValue,
-        HasMessageParts,
-        HasIsGroup
+  HasFieldDefinition,
+  HasFixFieldValue,
+  HasMessageParts,
+  HasIsGroup
