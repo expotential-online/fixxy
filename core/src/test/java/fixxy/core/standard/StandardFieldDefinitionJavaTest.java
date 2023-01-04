@@ -22,7 +22,7 @@ class StandardFieldDefinitionJavaTest {
 
   @Test
   @DisplayName(ConstructFromTagNumberAndDescriptionAndSynopsisTestName)
-  public void testConstructFromTagNumberAndDescriptionAndSynopsis() {
+  void testConstructFromTagNumberAndDescriptionAndSynopsis() {
     final FieldDefinition value = simpleFieldDefinition(1, "Account", "An account");
     assertEquals(1, value.getTagNumber());
     assertEquals("Account", value.getDescription());
@@ -32,7 +32,7 @@ class StandardFieldDefinitionJavaTest {
 
   @Test
   @DisplayName(ConstructFromTagNumberAndDescriptionTestName)
-  public void testConstructFromTagNumberAndDescription() {
+  void testConstructFromTagNumberAndDescription() {
     final FieldDefinition value = simpleFieldDefinition(1, "Account");
     assertEquals(1, value.getTagNumber());
     assertEquals("Account", value.getDescription());
@@ -42,7 +42,7 @@ class StandardFieldDefinitionJavaTest {
 
   @Test
   @DisplayName(ConstructFromTagNumberAndDescriptionAndSynopsisAndEnumerableValuesTestName)
-  public void testConstructFromTagNumberAndDescriptionAndSynopsisAndEnumerableValues() {
+  void testConstructFromTagNumberAndDescriptionAndSynopsisAndEnumerableValues() {
     final EnumerableFieldValue fieldValue1 = simpleEnumerableFieldValue("account_1", "X");
     final EnumerableFieldValue fieldValue2 = simpleEnumerableFieldValue("account_2", "Y");
     final FieldDefinition value = enumeratedFieldDefinition(1, "Account", "An account",
@@ -55,7 +55,7 @@ class StandardFieldDefinitionJavaTest {
 
   @Test
   @DisplayName(ConstructFromTagNumberAndDescriptionAndEnumerableValuesTestName)
-  public void testConstructFromTagNumberAndDescriptionAndEnumerableValues() {
+  void testConstructFromTagNumberAndDescriptionAndEnumerableValues() {
     final EnumerableFieldValue fieldValue1 = simpleEnumerableFieldValue("account_3", "Z");
     final EnumerableFieldValue fieldValue2 = simpleEnumerableFieldValue("account_4", "A");
     final FieldDefinition value = enumeratedFieldDefinition(1, "Account", Set.of(fieldValue1, fieldValue2));

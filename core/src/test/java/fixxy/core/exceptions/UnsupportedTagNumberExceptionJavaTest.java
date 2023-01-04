@@ -12,7 +12,7 @@ class UnsupportedTagNumberExceptionJavaTest {
 
   @Test
   @DisplayName(MessageTestName)
-  public void testMessage() {
+  void testMessage() {
     final Exception exception = new UnsupportedTagNumberException(23);
     assertEquals("Tag [23] is unsupported", exception.getMessage());
   }
