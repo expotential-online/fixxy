@@ -29,8 +29,8 @@ object QuickFixEnumeratedFieldValueHelper {
   private fun quickFixFieldClassConstants(fieldClass: KClass<*>) =
     fieldClass.staticProperties.filter { inScope(it) }
 
-  private fun inScope(property: KProperty0<*>): Boolean =
-    property.isFinal && isPublic(property) && shouldNotBeIgnored(property)
+  internal fun inScope(property: KProperty0<*>): Boolean =
+    property.isConst && isPublic(property) && shouldNotBeIgnored(property)
 
   private fun isPublic(property: KProperty0<*>): Boolean =
     property.visibility == PUBLIC

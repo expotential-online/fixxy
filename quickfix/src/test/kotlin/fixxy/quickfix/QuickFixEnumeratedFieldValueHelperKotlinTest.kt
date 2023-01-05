@@ -2,7 +2,8 @@ package fixxy.quickfix
 
 import fixxy.core.EnumerableFieldValue
 import fixxy.core.TagNumber
-import fixxy.quickfix.QuickFixEnumeratedFieldValueHelperTest.Companion.KotlinSuiteName
+import fixxy.quickfix.QuickFixEnumeratedFieldValueHelperJavaTest.ScopingTester
+import fixxy.quickfix.QuickFixEnumeratedFieldValueHelperKotlinTest.Companion.KotlinSuiteName
 import fixxy.quickfix.QuickFixVersion.Fix40
 import fixxy.quickfix.QuickFixVersion.Fix41
 import fixxy.quickfix.QuickFixVersion.Fix42
@@ -11,15 +12,20 @@ import fixxy.quickfix.QuickFixVersion.Fix44
 import fixxy.quickfix.QuickFixVersion.Fix50
 import fixxy.quickfix.QuickFixVersion.Fix50sp1
 import fixxy.quickfix.QuickFixVersion.Fix50sp2
+import fixxy.quickfix.Tests.Java
 import fixxy.quickfix.Tests.Kotlin
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.platform.commons.logging.LoggerFactory.getLogger
 import quickfix.DataDictionary
 import quickfix.DefaultDataDictionaryProvider
+import kotlin.reflect.KProperty0
+import kotlin.reflect.full.staticProperties
 
 @DisplayName(KotlinSuiteName)
-internal class QuickFixEnumeratedFieldValueHelperTest {
+internal class QuickFixEnumeratedFieldValueHelperKotlinTest {
 
   private val logger = getLogger(javaClass)
 
@@ -71,6 +77,16 @@ internal class QuickFixEnumeratedFieldValueHelperTest {
     testAllQuickFixFieldsWithEnumeratedFieldValuesForFixVersion(Fix50sp2)
   }
 
+  @Test
+  @DisplayName(InScopePropertyTestName)
+  fun testInScopeProperty() {
+    assertFalse(QuickFixEnumeratedFieldValueHelper.inScope(scopingTesterProperty("nonConstant")))
+    assertFalse(QuickFixEnumeratedFieldValueHelper.inScope(scopingTesterProperty("nonPublic")))
+    assertFalse(QuickFixEnumeratedFieldValueHelper.inScope(scopingTesterProperty("serialVersionUID")))
+    assertFalse(QuickFixEnumeratedFieldValueHelper.inScope(scopingTesterProperty("FIELD")))
+    assertTrue(QuickFixEnumeratedFieldValueHelper.inScope(scopingTesterProperty("candidate")))
+  }
+
   private fun testAllQuickFixFieldsWithEnumeratedFieldValuesForFixVersion(quickFixVersion: QuickFixVersion) {
     val dictionary = dictionaryForVersion(quickFixVersion)
     val fieldsWithEnumeratedFieldValues = fieldsWithEnumeratedFieldValues(dictionary)
@@ -105,13 +121,19 @@ internal class QuickFixEnumeratedFieldValueHelperTest {
     return summary.toString()
   }
 
+  private fun scopingTesterProperty(propertyName: String): KProperty0<*> =
+    ScopingTester::class.staticProperties.first { it.name == propertyName }
+
   private data class Field(val tagNumber: TagNumber, val name: String)
 
   companion object {
-    private const val SuiteName = "QuickFix Enumerated Field Value Helper"
+    private const val SuiteName = "The QuickFix enumerated field value helper"
     const val KotlinSuiteName = "$Kotlin $SuiteName"
+    const val JavaSuiteName = "$Java $SuiteName"
 
     const val AllQuickFixFieldsWithEnumeratedFieldValuesTestNameSuffix =
-      "All QuickFix fields with enumerated values are correctly processed"
+      "correctly processes All QuickFix fields with enumerated values for this FIX version"
+    const val InScopePropertyTestName =
+      "correctly determines whether a class property is a candidate for an enumerated field value"
   }
 }
