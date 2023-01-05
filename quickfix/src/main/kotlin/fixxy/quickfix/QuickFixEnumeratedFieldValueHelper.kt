@@ -29,6 +29,7 @@ object QuickFixEnumeratedFieldValueHelper {
   private fun quickFixFieldClassConstants(fieldClass: KClass<*>) =
     fieldClass.staticProperties.filter { inScope(it) }
 
+  @JvmStatic
   internal fun inScope(property: KProperty0<*>): Boolean =
     property.isConst && isPublic(property) && shouldNotBeIgnored(property)
 

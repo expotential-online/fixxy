@@ -2,6 +2,8 @@ package fixxy.quickfix
 
 import fixxy.core.EnumerableFieldValue
 import fixxy.core.TagNumber
+import fixxy.quickfix.QuickFixEnumeratedFieldValueHelper.enumeratedFieldValuesForFieldName
+import fixxy.quickfix.QuickFixEnumeratedFieldValueHelper.inScope
 import fixxy.quickfix.QuickFixEnumeratedFieldValueHelperJavaTest.ScopingTester
 import fixxy.quickfix.QuickFixEnumeratedFieldValueHelperKotlinTest.Companion.KotlinSuiteName
 import fixxy.quickfix.QuickFixVersion.Fix40
@@ -80,11 +82,11 @@ internal class QuickFixEnumeratedFieldValueHelperKotlinTest {
   @Test
   @DisplayName(InScopePropertyTestName)
   fun testInScopeProperty() {
-    assertFalse(QuickFixEnumeratedFieldValueHelper.inScope(scopingTesterProperty("nonConstant")))
-    assertFalse(QuickFixEnumeratedFieldValueHelper.inScope(scopingTesterProperty("nonPublic")))
-    assertFalse(QuickFixEnumeratedFieldValueHelper.inScope(scopingTesterProperty("serialVersionUID")))
-    assertFalse(QuickFixEnumeratedFieldValueHelper.inScope(scopingTesterProperty("FIELD")))
-    assertTrue(QuickFixEnumeratedFieldValueHelper.inScope(scopingTesterProperty("candidate")))
+    assertFalse(inScope(scopingTesterProperty("nonConstant")))
+    assertFalse(inScope(scopingTesterProperty("nonPublic")))
+    assertFalse(inScope(scopingTesterProperty("serialVersionUID")))
+    assertFalse(inScope(scopingTesterProperty("FIELD")))
+    assertTrue(inScope(scopingTesterProperty("candidate")))
   }
 
   private fun testAllQuickFixFieldsWithEnumeratedFieldValuesForFixVersion(quickFixVersion: QuickFixVersion) {
@@ -105,7 +107,7 @@ internal class QuickFixEnumeratedFieldValueHelperKotlinTest {
       .toList()
 
   private fun testQuickFixFieldWithEnumeratedValues(field: Field): String {
-    val values = QuickFixEnumeratedFieldValueHelper.enumeratedFieldValuesForFieldName(field.name)
+    val values = enumeratedFieldValuesForFieldName(field.name)
     return summary(field, values)
   }
 
@@ -116,7 +118,7 @@ internal class QuickFixEnumeratedFieldValueHelperKotlinTest {
     )
     enumerableFieldValues.forEach {
       val paddedFixFieldValue = it.fixFieldValue.padEnd(longestFixFieldValue, ' ')
-      summary.append(" - $paddedFixFieldValue | ${it.description} \n")
+      summary.append(" - $paddedFixFieldValue | ${it.description}\n")
     }
     return summary.toString()
   }
