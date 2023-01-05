@@ -70,10 +70,10 @@ internal class QuickFixMessageAdapterKotlinTest {
   }
 
   companion object {
-    private const val SuiteName = "QuickFix message adapter"
+    private const val SuiteName = "A QuickFix message adapter"
     const val KotlinSuiteName = "$Kotlin $SuiteName"
     const val JavaSuiteName = "$Java $SuiteName"
 
-    const val StructureWithRepeatingGroupsTestName = "Structure with repeating groups"
+    const val StructureWithRepeatingGroupsTestName = "handles structure with repeating groups"
   }
 }
