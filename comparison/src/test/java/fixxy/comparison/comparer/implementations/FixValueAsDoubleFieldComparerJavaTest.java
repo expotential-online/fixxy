@@ -1,7 +1,5 @@
 package fixxy.comparison.comparer.implementations;
 
-import static fixxy.core.standard.StandardField.simpleField;
-import static fixxy.core.standard.StandardFieldDefinition.simpleFieldDefinition;
 import static fixxy.comparison.ComparisonResultAcceptability.Acceptable;
 import static fixxy.comparison.ComparisonResultAcceptability.Unacceptable;
 import static fixxy.comparison.comparer.implementations.FixValueAsDoubleFieldComparerKotlinTest.AcceptingWithJustDecimalPlaceDifferenceTestName;
@@ -11,6 +9,8 @@ import static fixxy.comparison.comparer.implementations.FixValueAsDoubleFieldCom
 import static fixxy.comparison.comparer.implementations.FixValueAsDoubleFieldComparerKotlinTest.RejectingWhenBothNonDoubleTestName;
 import static fixxy.comparison.comparer.implementations.FixValueAsDoubleFieldComparerKotlinTest.RejectingWhenOnlyLeftNonDoubleTestName;
 import static fixxy.comparison.comparer.implementations.FixValueAsDoubleFieldComparerKotlinTest.RejectingWhenOnlyRightNonDoubleTestName;
+import static fixxy.core.standard.StandardField.simpleField;
+import static fixxy.core.standard.StandardFieldDefinition.simpleFieldDefinition;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import fixxy.comparison.FieldComparisonResult;
