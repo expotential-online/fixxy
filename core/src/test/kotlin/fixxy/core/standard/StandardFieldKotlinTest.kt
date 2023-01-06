@@ -20,11 +20,11 @@ internal class StandardFieldKotlinTest {
   @DisplayName(ConstructSimpleFieldTestName)
   fun testConstructSimpleField() {
     val value = simpleField(simpleFieldDefinition(54, "Side"), "2")
-    assertEquals(54, value.definition().tagNumber)
-    assertEquals("Side", value.definition().description)
-    assertEquals("2", value.fixFieldValue)
+    assertEquals(54, value.fieldDefinition().tagNumber())
+    assertEquals("Side", value.fieldDefinition().description())
+    assertEquals("2", value.fixFieldValue())
     assertFalse(value.isGroup())
-    assertTrue(value.parts.isEmpty())
+    assertTrue(value.parts().isEmpty())
   }
 
   @Test
@@ -39,11 +39,11 @@ internal class StandardFieldKotlinTest {
       simpleField(simpleFieldDefinition(54, "Side"), "1")
     )
     val value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", setOf(part1, part2))
-    assertEquals(2, value.definition().tagNumber)
-    assertEquals("NoEntries", value.definition().description)
-    assertEquals("2", value.fixFieldValue)
+    assertEquals(2, value.fieldDefinition().tagNumber())
+    assertEquals("NoEntries", value.fieldDefinition().description())
+    assertEquals("2", value.fixFieldValue())
     assertTrue(value.isGroup())
-    assertEquals(setOf(part1, part2), value.parts)
+    assertEquals(setOf(part1, part2), value.parts())
   }
 
   @Test
@@ -58,11 +58,11 @@ internal class StandardFieldKotlinTest {
       simpleField(simpleFieldDefinition(54, "Side"), "3")
     )
     val value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", part1, part2)
-    assertEquals(2, value.definition().tagNumber)
-    assertEquals("NoEntries", value.definition().description)
-    assertEquals("2", value.fixFieldValue)
+    assertEquals(2, value.fieldDefinition().tagNumber())
+    assertEquals("NoEntries", value.fieldDefinition().description())
+    assertEquals("2", value.fixFieldValue())
     assertTrue(value.isGroup())
-    assertEquals(setOf(part1, part2), value.parts)
+    assertEquals(setOf(part1, part2), value.parts())
   }
 
   companion object {

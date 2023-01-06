@@ -28,8 +28,8 @@ class AbstractFieldDefinitionRepositoryJavaTest {
   @DisplayName(NotNullAndNotThrowingTestName)
   void testNotNullAndNotThrowing() {
     final TestFieldDefinitionRepository repo = new TestFieldDefinitionRepository(false);
-    assertEquals(54, repo.fieldDefinitionOrThrowForTagNumber(54).getTagNumber());
-    assertEquals(54, repo.fieldDefinitionOrNullForTagNumber(54).getTagNumber());
+    assertEquals(54, repo.fieldDefinitionOrThrowForTagNumber(54).tagNumber());
+    assertEquals(54, repo.fieldDefinitionOrNullForTagNumber(54).tagNumber());
   }
 
   private static final class TestFieldDefinitionRepository extends AbstractFieldDefinitionRepository {

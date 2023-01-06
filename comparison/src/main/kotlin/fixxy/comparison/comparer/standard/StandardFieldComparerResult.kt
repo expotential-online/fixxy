@@ -1,16 +1,16 @@
-package fixxy.comparison.standard
+package fixxy.comparison.comparer.standard
 
 import fixxy.comparison.ComparisonResultAcceptability
 import fixxy.comparison.ComparisonResultAcceptability.Acceptable
 import fixxy.comparison.ComparisonResultAcceptability.Unacceptable
 import fixxy.comparison.ComparisonResultMessage
-import fixxy.comparison.FieldComparisonResult
+import fixxy.comparison.comparer.FieldComparerResult
 
 @Suppress("DataClassPrivateConstructor")
-data class StandardFieldComparisonResult private constructor(
+data class StandardFieldComparerResult private constructor(
   private val acceptability: ComparisonResultAcceptability,
   private val message: ComparisonResultMessage
-) : FieldComparisonResult {
+) : FieldComparerResult {
 
   override fun acceptability(): ComparisonResultAcceptability = acceptability
   override fun message(): ComparisonResultMessage = message
@@ -18,10 +18,10 @@ data class StandardFieldComparisonResult private constructor(
   companion object {
 
     @JvmStatic
-    fun accepting(): FieldComparisonResult = StandardFieldComparisonResult(Acceptable, "OK")
+    fun accepting(): FieldComparerResult = StandardFieldComparerResult(Acceptable, "OK")
 
     @JvmStatic
-    fun rejectingWithMessage(message: ComparisonResultMessage): FieldComparisonResult =
-      StandardFieldComparisonResult(Unacceptable, message)
+    fun rejectingWithMessage(message: ComparisonResultMessage): FieldComparerResult =
+      StandardFieldComparerResult(Unacceptable, message)
   }
 }

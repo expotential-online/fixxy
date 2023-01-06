@@ -20,7 +20,7 @@ internal class StandardMessagePartKotlinTest {
     val field1 = simpleField(simpleFieldDefinition(1, "Account"), "account_1")
     val field2 = simpleField(simpleFieldDefinition(54, "Side"), "2")
     val value = simpleMessagePart(setOf(field1, field2))
-    assertEquals(setOf(field1, field2), value.fields)
+    assertEquals(setOf(field1, field2), value.fields())
   }
 
   @Test
@@ -29,7 +29,7 @@ internal class StandardMessagePartKotlinTest {
     val field1 = simpleField(simpleFieldDefinition(1, "Account"), "account_2")
     val field2 = simpleField(simpleFieldDefinition(54, "Side"), "1")
     val value = simpleMessagePart(field1, field2)
-    assertEquals(setOf(field1, field2), value.fields)
+    assertEquals(setOf(field1, field2), value.fields())
   }
 
   @Test

@@ -18,20 +18,20 @@ internal class StandardFieldDefinitionKotlinTest {
   @DisplayName(ConstructFromTagNumberAndDescriptionAndSynopsisTestName)
   fun testConstructFromTagNumberAndDescriptionAndSynopsis() {
     val value = simpleFieldDefinition(1, "Account", "An account")
-    assertEquals(1, value.tagNumber)
-    assertEquals("Account", value.description)
-    assertEquals("An account", value.synopsis)
-    assertTrue(value.enumerableValues.isEmpty())
+    assertEquals(1, value.tagNumber())
+    assertEquals("Account", value.description())
+    assertEquals("An account", value.synopsis())
+    assertTrue(value.enumerableValues().isEmpty())
   }
 
   @Test
   @DisplayName(ConstructFromTagNumberAndDescriptionTestName)
   fun testConstructFromTagNumberAndDescription() {
     val value = simpleFieldDefinition(1, "Account")
-    assertEquals(1, value.tagNumber)
-    assertEquals("Account", value.description)
-    assertEquals("Account", value.synopsis)
-    assertTrue(value.enumerableValues.isEmpty())
+    assertEquals(1, value.tagNumber())
+    assertEquals("Account", value.description())
+    assertEquals("Account", value.synopsis())
+    assertTrue(value.enumerableValues().isEmpty())
   }
 
   @Test
@@ -40,10 +40,10 @@ internal class StandardFieldDefinitionKotlinTest {
     val fieldValue1 = simpleEnumerableFieldValue("account_1", "X")
     val fieldValue2 = simpleEnumerableFieldValue("account_2", "Y")
     val value = enumeratedFieldDefinition(1, "Account", "An account", setOf(fieldValue1, fieldValue2))
-    assertEquals(1, value.tagNumber)
-    assertEquals("Account", value.description)
-    assertEquals("An account", value.synopsis)
-    assertEquals(setOf(fieldValue1, fieldValue2), value.enumerableValues)
+    assertEquals(1, value.tagNumber())
+    assertEquals("Account", value.description())
+    assertEquals("An account", value.synopsis())
+    assertEquals(setOf(fieldValue1, fieldValue2), value.enumerableValues())
   }
 
   @Test
@@ -52,10 +52,10 @@ internal class StandardFieldDefinitionKotlinTest {
     val fieldValue1 = simpleEnumerableFieldValue("account_3", "Z")
     val fieldValue2 = simpleEnumerableFieldValue("account_4", "A")
     val value = enumeratedFieldDefinition(1, "Account", setOf(fieldValue1, fieldValue2))
-    assertEquals(1, value.tagNumber)
-    assertEquals("Account", value.description)
-    assertEquals("Account", value.synopsis)
-    assertEquals(setOf(fieldValue1, fieldValue2), value.enumerableValues)
+    assertEquals(1, value.tagNumber())
+    assertEquals("Account", value.description())
+    assertEquals("Account", value.synopsis())
+    assertEquals(setOf(fieldValue1, fieldValue2), value.enumerableValues())
   }
 
 

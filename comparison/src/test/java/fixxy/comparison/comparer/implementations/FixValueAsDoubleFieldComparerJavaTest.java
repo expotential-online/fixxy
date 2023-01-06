@@ -13,7 +13,7 @@ import static fixxy.core.standard.StandardField.simpleField;
 import static fixxy.core.standard.StandardFieldDefinition.simpleFieldDefinition;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import fixxy.comparison.FieldComparisonResult;
+import fixxy.comparison.comparer.FieldComparerResult;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +23,7 @@ class FixValueAsDoubleFieldComparerJavaTest {
   @Test
   @DisplayName(AcceptingWithJustDecimalPlaceDifferenceTestName)
   void testAcceptingWithJustDecimalPlaceDifference() {
-    final FieldComparisonResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(1E-6).compare(
+    final FieldComparerResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(1E-6).compare(
         simpleField(simpleFieldDefinition(44, "Price"), "187.00"),
         simpleField(simpleFieldDefinition(44, "Price"), "187"));
     assertEquals(Acceptable, result.acceptability());
@@ -33,7 +33,7 @@ class FixValueAsDoubleFieldComparerJavaTest {
   @Test
   @DisplayName(AcceptingWithinToleranceTestName)
   void testAcceptingWithinTolerance() {
-    final FieldComparisonResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(0.05).compare(
+    final FieldComparerResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(0.05).compare(
         simpleField(simpleFieldDefinition(44, "Price"), "187.04"),
         simpleField(simpleFieldDefinition(44, "Price"), "187"));
     assertEquals(Acceptable, result.acceptability());
@@ -43,7 +43,7 @@ class FixValueAsDoubleFieldComparerJavaTest {
   @Test
   @DisplayName(RejectingOutsideToleranceTestName)
   void testRejectingOutsideTolerance() {
-    final FieldComparisonResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(0.05).compare(
+    final FieldComparerResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(0.05).compare(
         simpleField(simpleFieldDefinition(44, "Price"), "187"),
         simpleField(simpleFieldDefinition(44, "Price"), "187.06"));
     assertEquals(Unacceptable, result.acceptability());
@@ -53,7 +53,7 @@ class FixValueAsDoubleFieldComparerJavaTest {
   @Test
   @DisplayName(RejectingWhenOnlyLeftNonDoubleTestName)
   void testRejectingWhenOnlyLeftNonDouble() {
-    final FieldComparisonResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(0.05).compare(
+    final FieldComparerResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(0.05).compare(
         simpleField(simpleFieldDefinition(44, "Price"), "not_a_double"),
         simpleField(simpleFieldDefinition(44, "Price"), "187.06"));
     assertEquals(Unacceptable, result.acceptability());
@@ -63,7 +63,7 @@ class FixValueAsDoubleFieldComparerJavaTest {
   @Test
   @DisplayName(RejectingWhenOnlyRightNonDoubleTestName)
   void testRejectingWhenOnlyRightNonDouble() {
-    final FieldComparisonResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(0.05).compare(
+    final FieldComparerResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(0.05).compare(
         simpleField(simpleFieldDefinition(44, "Price"), "187"),
         simpleField(simpleFieldDefinition(44, "Price"), "not_a_double"));
     assertEquals(Unacceptable, result.acceptability());
@@ -73,7 +73,7 @@ class FixValueAsDoubleFieldComparerJavaTest {
   @Test
   @DisplayName(RejectingWhenBothNonDoubleTestName)
   void testRejectingWhenBothNonDouble() {
-    final FieldComparisonResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(0.05).compare(
+    final FieldComparerResult result = FixValueAsDoubleFieldComparer.withAllowedDifference(0.05).compare(
         simpleField(simpleFieldDefinition(44, "Price"), "not_a_double"),
         simpleField(simpleFieldDefinition(44, "Price"), "not_a_double_either"));
     assertEquals(Unacceptable, result.acceptability());

@@ -32,7 +32,7 @@ class QuickFixMessageAdapter : MessageAdapter<quickfix.Message> {
       adaptNonGroupField(quickFixField, context)
 
   private fun adaptNonGroupField(quickFixField: quickfix.Field<*>, context: Context): Field {
-    val fieldDefinition = context.fieldDefinitions.fieldDefinitionOrThrowForTagNumber(quickFixField.tag)
+    val fieldDefinition = context.fieldDefinitions().fieldDefinitionOrThrowForTagNumber(quickFixField.tag)
     return simpleField(fieldDefinition, fixFieldValueFrom(quickFixField))
   }
 
@@ -45,7 +45,7 @@ class QuickFixMessageAdapter : MessageAdapter<quickfix.Message> {
       .map { adaptFieldMap(it, context) }
       .map { simpleMessagePart(it) }
       .toSet()
-    val fieldDefinition = context.fieldDefinitions.fieldDefinitionOrThrowForTagNumber(quickFixField.tag)
+    val fieldDefinition = context.fieldDefinitions().fieldDefinitionOrThrowForTagNumber(quickFixField.tag)
     return groupCountField(fieldDefinition, fixFieldValueFrom(quickFixField), groups)
   }
 

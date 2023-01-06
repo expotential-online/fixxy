@@ -19,7 +19,7 @@ internal class StandardMessageKotlinTest {
     val field1 = simpleField(simpleFieldDefinition(1, "Account"), "account_1")
     val field2 = simpleField(simpleFieldDefinition(54, "Side"), "2")
     val value = simpleMessage(setOf(field1, field2))
-    assertEquals(setOf(field1, field2), value.fields)
+    assertEquals(setOf(field1, field2), value.fields())
   }
 
   @Test
@@ -28,7 +28,7 @@ internal class StandardMessageKotlinTest {
     val field1 = simpleField(simpleFieldDefinition(1, "Account"), "account_2")
     val field2 = simpleField(simpleFieldDefinition(54, "Side"), "1")
     val value = simpleMessage(field1, field2)
-    assertEquals(setOf(field1, field2), value.fields)
+    assertEquals(setOf(field1, field2), value.fields())
   }
 
   @Test

@@ -8,11 +8,16 @@ import fixxy.core.TagNumber
 
 @Suppress("DataClassPrivateConstructor")
 data class StandardFieldDefinition private constructor(
-  override val tagNumber: TagNumber,
-  override val description: Description,
-  override val synopsis: Synopsis,
-  override val enumerableValues: Set<EnumerableFieldValue>
+  private val tagNumber: TagNumber,
+  private val description: Description,
+  private val synopsis: Synopsis,
+  private val enumerableValues: Set<EnumerableFieldValue>
 ) : FieldDefinition {
+
+  override fun tagNumber(): TagNumber = tagNumber
+  override fun description(): Description = description
+  override fun synopsis(): Synopsis = synopsis
+  override fun enumerableValues(): Set<EnumerableFieldValue> = enumerableValues
 
   companion object {
 

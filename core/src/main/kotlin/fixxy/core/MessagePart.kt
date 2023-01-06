@@ -1,5 +1,10 @@
 package fixxy.core
 
-interface MessagePart {
-  val fields: Set<Field>
-}
+import fixxy.core.subinterface.HasFieldOrNullForTagNumber
+import fixxy.core.subinterface.HasFieldOrThrowForTagNumber
+import fixxy.core.subinterface.MightHaveFields
+
+interface MessagePart :
+  MightHaveFields,
+  HasFieldOrNullForTagNumber,
+  HasFieldOrThrowForTagNumber

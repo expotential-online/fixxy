@@ -10,7 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import fixxy.core.Field;
 import fixxy.core.MessagePart;
+
 import java.util.Set;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +25,7 @@ class StandardMessagePartJavaTest {
     final Field field1 = simpleField(simpleFieldDefinition(1, "Account"), "account_1");
     final Field field2 = simpleField(simpleFieldDefinition(54, "Side"), "2");
     final MessagePart value = simpleMessagePart(Set.of(field1, field2));
-    assertEquals(Set.of(field1, field2), value.getFields());
+    assertEquals(Set.of(field1, field2), value.fields());
   }
 
   @Test
@@ -32,6 +34,6 @@ class StandardMessagePartJavaTest {
     final Field field1 = simpleField(simpleFieldDefinition(1, "Account"), "account_2");
     final Field field2 = simpleField(simpleFieldDefinition(54, "Side"), "1");
     final MessagePart value = simpleMessagePart(field1, field2);
-    assertEquals(Set.of(field1, field2), value.getFields());
+    assertEquals(Set.of(field1, field2), value.fields());
   }
 }

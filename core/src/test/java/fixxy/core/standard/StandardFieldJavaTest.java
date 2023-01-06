@@ -25,11 +25,11 @@ class StandardFieldJavaTest {
   @DisplayName(ConstructSimpleFieldTestName)
   void testConstructSimpleField() {
     final Field value = simpleField(simpleFieldDefinition(54, "Side"), "2");
-    assertEquals(54, value.definition().getTagNumber());
-    assertEquals("Side", value.definition().getDescription());
-    assertEquals("2", value.getFixFieldValue());
+    assertEquals(54, value.fieldDefinition().tagNumber());
+    assertEquals("Side", value.fieldDefinition().description());
+    assertEquals("2", value.fixFieldValue());
     assertFalse(value.isGroup());
-    assertTrue(value.getParts().isEmpty());
+    assertTrue(value.parts().isEmpty());
   }
 
   @Test
@@ -42,11 +42,11 @@ class StandardFieldJavaTest {
         simpleField(simpleFieldDefinition(1, "Account"), "account_2"),
         simpleField(simpleFieldDefinition(54, "Side"), "1"));
     final Field value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", Set.of(part1, part2));
-    assertEquals(2, value.definition().getTagNumber());
-    assertEquals("NoEntries", value.definition().getDescription());
-    assertEquals("2", value.getFixFieldValue());
+    assertEquals(2, value.fieldDefinition().tagNumber());
+    assertEquals("NoEntries", value.fieldDefinition().description());
+    assertEquals("2", value.fixFieldValue());
     assertTrue(value.isGroup());
-    assertEquals(Set.of(part1, part2), value.getParts());
+    assertEquals(Set.of(part1, part2), value.parts());
   }
 
   @Test
@@ -59,10 +59,10 @@ class StandardFieldJavaTest {
         simpleField(simpleFieldDefinition(1, "Account"), "account_4"),
         simpleField(simpleFieldDefinition(54, "Side"), "3"));
     final Field value = groupCountField(simpleFieldDefinition(2, "NoEntries"), "2", part1, part2);
-    assertEquals(2, value.definition().getTagNumber());
-    assertEquals("NoEntries", value.definition().getDescription());
-    assertEquals("2", value.getFixFieldValue());
+    assertEquals(2, value.fieldDefinition().tagNumber());
+    assertEquals("NoEntries", value.fieldDefinition().description());
+    assertEquals("2", value.fixFieldValue());
     assertTrue(value.isGroup());
-    assertEquals(Set.of(part1, part2), value.getParts());
+    assertEquals(Set.of(part1, part2), value.parts());
   }
 }
