@@ -1,11 +1,11 @@
 package fixxy.comparison.exceptions;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
 import static fixxy.comparison.exceptions.FieldComparisonNotIncludedExceptionKotlinTest.HasDescriptiveMessageTestName;
 import static fixxy.comparison.exceptions.FieldComparisonNotIncludedExceptionKotlinTest.JavaSuiteName;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 @DisplayName(JavaSuiteName)
 class FieldComparisonNotIncludedExceptionJavaTest {

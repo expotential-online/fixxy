@@ -1,11 +1,11 @@
 package fixxy.comparison;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
 import static fixxy.comparison.FieldInclusionKotlinTest.AllDescriptionsAreCapitalisedTestName;
 import static fixxy.comparison.FieldInclusionKotlinTest.JavaSuiteName;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 @DisplayName(JavaSuiteName)
 class FieldInclusionJavaTest {

@@ -1,18 +1,17 @@
 package fixxy.comparison.comparer.implementations;
 
-import fixxy.comparison.ComparisonResultAcceptability;
-import fixxy.comparison.comparer.FieldComparerResult;
-import fixxy.core.standard.StandardField;
-import fixxy.core.standard.StandardFieldDefinition;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
 import static fixxy.comparison.ComparisonResultAcceptability.Acceptable;
 import static fixxy.comparison.ComparisonResultAcceptability.Unacceptable;
 import static fixxy.comparison.comparer.implementations.FixValueAsStringFieldComparerKotlinTest.*;
 import static fixxy.core.standard.StandardField.simpleField;
 import static fixxy.core.standard.StandardFieldDefinition.simpleFieldDefinition;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+
+import fixxy.comparison.comparer.FieldComparerResult;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 @DisplayName(JavaSuiteName)
 class FixValueAsStringFieldComparerJavaTest {
