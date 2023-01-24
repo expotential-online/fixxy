@@ -6,12 +6,14 @@ import fixxy.comparison.comparer.standard.StandardFieldComparerResult.Companion.
 import fixxy.comparison.comparer.standard.StandardFieldComparerResult.Companion.rejectingWithMessage
 import fixxy.core.Field
 
-object FixValueAsStringFieldComparer: FieldComparer {
-
+object FixValueAsStringFieldComparer : FieldComparer {
+  // TODO: How can we avoid the INSTANCE in Java usage?
   override fun compare(leftField: Field, rightField: Field): FieldComparerResult =
     if (leftField.fixFieldValue() == rightField.fixFieldValue()) {
       accepting()
     } else {
-      rejectingWithMessage("Left [${leftField.fixFieldValue()} and right [${rightField.fixFieldValue()}] are different")
+      rejectingWithMessage(
+        "Left [${leftField.fixFieldValue()}] and right [${rightField.fixFieldValue()}] are different"
+      )
     }
 }

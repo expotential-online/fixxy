@@ -1,5 +1,10 @@
 package fixxy.comparison
 
-interface MessagePartComparison {
-  fun fieldComparisons(): Set<FieldComparison>
-}
+import fixxy.comparison.subinterface.HasFieldComparisonOrNullForTagNumber
+import fixxy.comparison.subinterface.HasFieldComparisonOrThrowForTagNumber
+import fixxy.comparison.subinterface.MightHaveFieldComparisons
+
+interface MessagePartComparison :
+  MightHaveFieldComparisons,
+  HasFieldComparisonOrNullForTagNumber,
+  HasFieldComparisonOrThrowForTagNumber
