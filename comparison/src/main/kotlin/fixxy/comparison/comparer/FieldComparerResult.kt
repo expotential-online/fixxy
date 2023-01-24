@@ -1,0 +1,8 @@
+package fixxy.comparison.comparer
+
+import fixxy.comparison.subinterface.HasComparisonResultAcceptability
+import fixxy.comparison.subinterface.HasComparisonResultMessage
+
+interface FieldComparerResult :
+  HasComparisonResultAcceptability,
+  HasComparisonResultMessage

@@ -24,20 +24,20 @@ class StandardFieldDefinitionJavaTest {
   @DisplayName(ConstructFromTagNumberAndDescriptionAndSynopsisTestName)
   void testConstructFromTagNumberAndDescriptionAndSynopsis() {
     final FieldDefinition value = simpleFieldDefinition(1, "Account", "An account");
-    assertEquals(1, value.getTagNumber());
-    assertEquals("Account", value.getDescription());
-    assertEquals("An account", value.getSynopsis());
-    assertTrue(value.getEnumerableValues().isEmpty());
+    assertEquals(1, value.tagNumber());
+    assertEquals("Account", value.description());
+    assertEquals("An account", value.synopsis());
+    assertTrue(value.enumerableValues().isEmpty());
   }
 
   @Test
   @DisplayName(ConstructFromTagNumberAndDescriptionTestName)
   void testConstructFromTagNumberAndDescription() {
     final FieldDefinition value = simpleFieldDefinition(1, "Account");
-    assertEquals(1, value.getTagNumber());
-    assertEquals("Account", value.getDescription());
-    assertEquals("Account", value.getSynopsis());
-    assertTrue(value.getEnumerableValues().isEmpty());
+    assertEquals(1, value.tagNumber());
+    assertEquals("Account", value.description());
+    assertEquals("Account", value.synopsis());
+    assertTrue(value.enumerableValues().isEmpty());
   }
 
   @Test
@@ -47,10 +47,10 @@ class StandardFieldDefinitionJavaTest {
     final EnumerableFieldValue fieldValue2 = simpleEnumerableFieldValue("account_2", "Y");
     final FieldDefinition value = enumeratedFieldDefinition(1, "Account", "An account",
         Set.of(fieldValue1, fieldValue2));
-    assertEquals(1, value.getTagNumber());
-    assertEquals("Account", value.getDescription());
-    assertEquals("An account", value.getSynopsis());
-    assertEquals(Set.of(fieldValue1, fieldValue2), value.getEnumerableValues());
+    assertEquals(1, value.tagNumber());
+    assertEquals("Account", value.description());
+    assertEquals("An account", value.synopsis());
+    assertEquals(Set.of(fieldValue1, fieldValue2), value.enumerableValues());
   }
 
   @Test
@@ -59,9 +59,9 @@ class StandardFieldDefinitionJavaTest {
     final EnumerableFieldValue fieldValue1 = simpleEnumerableFieldValue("account_3", "Z");
     final EnumerableFieldValue fieldValue2 = simpleEnumerableFieldValue("account_4", "A");
     final FieldDefinition value = enumeratedFieldDefinition(1, "Account", Set.of(fieldValue1, fieldValue2));
-    assertEquals(1, value.getTagNumber());
-    assertEquals("Account", value.getDescription());
-    assertEquals("Account", value.getSynopsis());
-    assertEquals(Set.of(fieldValue1, fieldValue2), value.getEnumerableValues());
+    assertEquals(1, value.tagNumber());
+    assertEquals("Account", value.description());
+    assertEquals("Account", value.synopsis());
+    assertEquals(Set.of(fieldValue1, fieldValue2), value.enumerableValues());
   }
 }

@@ -106,7 +106,7 @@ class QuickFixEnumeratedFieldValueHelperJavaTest {
 
   private String summary(final Field field, final Set<EnumerableFieldValue> enumerableFieldValues) {
     final int longestFixFieldValue = enumerableFieldValues.stream()
-        .map(it -> it.getFixFieldValue().length())
+        .map(it -> it.fixFieldValue().length())
         .max(Integer::compare)
         .orElse(1);
     final StringBuilder summary = new StringBuilder("FIX field [")
@@ -115,11 +115,11 @@ class QuickFixEnumeratedFieldValueHelperJavaTest {
         .append(field.name)
         .append("] has enumerated values:\n\n");
     for (final EnumerableFieldValue it : enumerableFieldValues) {
-      final String paddedFixFieldValue = format("%-" + longestFixFieldValue + "s", it.getFixFieldValue());
+      final String paddedFixFieldValue = format("%-" + longestFixFieldValue + "s", it.fixFieldValue());
       summary.append(" - ")
           .append(paddedFixFieldValue)
           .append(" | ")
-          .append(it.getDescription())
+          .append(it.description())
           .append("\n");
     }
     return summary.toString();

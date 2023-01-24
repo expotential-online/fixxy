@@ -26,8 +26,8 @@ internal class AbstractFieldDefinitionRepositoryKotlinTest {
   @DisplayName(NotNullAndNotThrowingTestName)
   fun testNotNullAndNotThrowing() {
     val repo = TestFieldDefinitionRepository(false)
-    assertEquals(54, repo.fieldDefinitionOrThrowForTagNumber(54).tagNumber)
-    assertEquals(54, repo.fieldDefinitionOrNullForTagNumber(54)?.tagNumber)
+    assertEquals(54, repo.fieldDefinitionOrThrowForTagNumber(54).tagNumber())
+    assertEquals(54, repo.fieldDefinitionOrNullForTagNumber(54)?.tagNumber())
   }
 
   private class TestFieldDefinitionRepository(private val throwing: Boolean) : AbstractFieldDefinitionRepository() {

@@ -5,6 +5,7 @@ import static fixxy.comparison.ComparisonResultAcceptability.Unacceptable;
 import static fixxy.comparison.ComparisonResultCategory.Different;
 import static fixxy.comparison.ComparisonResultCategory.DifferentButAccepted;
 import static fixxy.comparison.ComparisonResultCategory.ExactlyTheSame;
+import static fixxy.comparison.ComparisonResultCategory.OnlyInOne;
 import static fixxy.comparison.ComparisonResultCategory.values;
 import static fixxy.comparison.ComparisonResultCategoryKotlinTest.AcceptabilityTestName;
 import static fixxy.comparison.ComparisonResultCategoryKotlinTest.JavaSuiteName;
@@ -36,5 +37,6 @@ class ComparisonResultCategoryJavaTest {
     expectedAcceptabilityByCategory.put(ExactlyTheSame, Acceptable);
     expectedAcceptabilityByCategory.put(DifferentButAccepted, Acceptable);
     expectedAcceptabilityByCategory.put(Different, Unacceptable);
+    expectedAcceptabilityByCategory.put(OnlyInOne, Unacceptable);
   }
 }

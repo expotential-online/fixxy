@@ -16,8 +16,8 @@ internal class StandardEnumerableFieldValueKotlinTest {
   @DisplayName(ConstructWithDescriptionAndFixFieldValueTestName)
   fun testConstructWithDescriptionAndFixFieldValue() {
     val value = simpleEnumerableFieldValue("some_description", "Z")
-    assertEquals("some_description", value.description)
-    assertEquals("Z", value.fixFieldValue)
+    assertEquals("some_description", value.description())
+    assertEquals("Z", value.fixFieldValue())
   }
 
   @Test

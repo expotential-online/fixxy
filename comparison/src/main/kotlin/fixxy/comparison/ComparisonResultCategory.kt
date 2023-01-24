@@ -6,5 +6,6 @@ import fixxy.comparison.ComparisonResultAcceptability.Unacceptable
 enum class ComparisonResultCategory(val acceptability: ComparisonResultAcceptability) {
   ExactlyTheSame(Acceptable),
   DifferentButAccepted(Acceptable),
-  Different(Unacceptable)
+  Different(Unacceptable),
+  OnlyInOne(Unacceptable)
 }

@@ -112,13 +112,13 @@ internal class QuickFixEnumeratedFieldValueHelperKotlinTest {
   }
 
   private fun summary(field: Field, enumerableFieldValues: Set<EnumerableFieldValue>): String {
-    val longestFixFieldValue = enumerableFieldValues.maxOfOrNull { it.fixFieldValue.length } ?: 1
+    val longestFixFieldValue = enumerableFieldValues.maxOfOrNull { it.fixFieldValue().length } ?: 1
     val summary = StringBuilder(
       "FIX field [${field.tagNumber}] with name [${field.name}] has enumerated values:\n\n"
     )
     enumerableFieldValues.forEach {
-      val paddedFixFieldValue = it.fixFieldValue.padEnd(longestFixFieldValue, ' ')
-      summary.append(" - $paddedFixFieldValue | ${it.description}\n")
+      val paddedFixFieldValue = it.fixFieldValue().padEnd(longestFixFieldValue, ' ')
+      summary.append(" - $paddedFixFieldValue | ${it.description()}\n")
     }
     return summary.toString()
   }

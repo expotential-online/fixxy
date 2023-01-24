@@ -5,6 +5,7 @@ import fixxy.comparison.ComparisonResultAcceptability.Unacceptable
 import fixxy.comparison.ComparisonResultCategory.Different
 import fixxy.comparison.ComparisonResultCategory.DifferentButAccepted
 import fixxy.comparison.ComparisonResultCategory.ExactlyTheSame
+import fixxy.comparison.ComparisonResultCategory.OnlyInOne
 import fixxy.comparison.ComparisonResultCategoryKotlinTest.Companion.KotlinSuiteName
 import fixxy.comparison.Tests.Java
 import fixxy.comparison.Tests.Kotlin
@@ -33,7 +34,8 @@ internal class ComparisonResultCategoryKotlinTest {
     private val expectedAcceptabilityByCategory = mapOf(
       ExactlyTheSame to Acceptable,
       DifferentButAccepted to Acceptable,
-      Different to Unacceptable
+      Different to Unacceptable,
+      OnlyInOne to Unacceptable
     )
   }
 }

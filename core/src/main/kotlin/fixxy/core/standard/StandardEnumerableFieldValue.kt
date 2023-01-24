@@ -6,9 +6,12 @@ import fixxy.core.FixFieldValue
 
 @Suppress("DataClassPrivateConstructor")
 data class StandardEnumerableFieldValue private constructor(
-  override val description: Description,
-  override val fixFieldValue: FixFieldValue
+  private val description: Description,
+  private val fixFieldValue: FixFieldValue
 ) : EnumerableFieldValue {
+
+  override fun description(): Description = description
+  override fun fixFieldValue(): FixFieldValue = fixFieldValue
 
   companion object {
 
