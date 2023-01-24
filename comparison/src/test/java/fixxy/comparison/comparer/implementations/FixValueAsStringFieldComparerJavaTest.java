@@ -2,7 +2,9 @@ package fixxy.comparison.comparer.implementations;
 
 import static fixxy.comparison.ComparisonResultAcceptability.Acceptable;
 import static fixxy.comparison.ComparisonResultAcceptability.Unacceptable;
-import static fixxy.comparison.comparer.implementations.FixValueAsStringFieldComparerKotlinTest.*;
+import static fixxy.comparison.comparer.implementations.FixValueAsStringFieldComparerKotlinTest.AcceptingWithBothEqualButDistinctTestName;
+import static fixxy.comparison.comparer.implementations.FixValueAsStringFieldComparerKotlinTest.JavaSuiteName;
+import static fixxy.comparison.comparer.implementations.FixValueAsStringFieldComparerKotlinTest.RejectingWithLeftBlankAndRightNonBlankTestName;
 import static fixxy.core.standard.StandardField.simpleField;
 import static fixxy.core.standard.StandardFieldDefinition.simpleFieldDefinition;
 import static org.junit.jupiter.api.Assertions.assertEquals;

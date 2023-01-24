@@ -4,7 +4,6 @@ import fixxy.core.Field
 import fixxy.core.MessagePart
 import fixxy.core.TagNumber
 import fixxy.core.exceptions.FieldNotIncludedException
-import fixxy.core.subinterface.HasFieldOrThrowForTagNumber
 
 @Suppress("DataClassPrivateConstructor")
 data class StandardMessagePart private constructor(private val fields: Set<Field>) : MessagePart {

@@ -1,19 +1,23 @@
 package fixxy.core.standard;
 
-import fixxy.core.Field;
-import fixxy.core.Message;
-import fixxy.core.exceptions.FieldNotIncludedException;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.util.Set;
-
 import static fixxy.core.standard.StandardField.simpleField;
 import static fixxy.core.standard.StandardFieldDefinition.simpleFieldDefinition;
 import static fixxy.core.standard.StandardMessage.simpleMessage;
-import static fixxy.core.standard.StandardMessageKotlinTest.*;
+import static fixxy.core.standard.StandardMessageKotlinTest.ConstructFromVarArgFieldsTestName;
+import static fixxy.core.standard.StandardMessageKotlinTest.FieldOrNullForTagNumberTestName;
+import static fixxy.core.standard.StandardMessageKotlinTest.FieldOrThrowForTagNumberTestName;
+import static fixxy.core.standard.StandardMessageKotlinTest.JavaSuiteName;
 import static fixxy.core.standard.StandardMessagePartKotlinTest.ConstructFromSetOfFieldsTestName;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import fixxy.core.Field;
+import fixxy.core.Message;
+import fixxy.core.exceptions.FieldNotIncludedException;
+import java.util.Set;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 @DisplayName(JavaSuiteName)
 class StandardMessageJavaTest {
